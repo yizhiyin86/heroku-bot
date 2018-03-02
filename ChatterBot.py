@@ -17,5 +17,9 @@ api = tweepy.API(auth, parser=tweepy.parsers.JSONParser())
 # Create a function that tweets
 # CODE GOES HERE
 while True:
-    api.update_status('hello')
+    try:
+        api.update_status('hello')
+        print('I sent a message')
+    except Exception as e:
+        print(e)
     time.sleep(30)
